@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>House Price Predictor</title>
+<link href="style.css" rel = "stylesheet"/>
+</head>
+
+<body>
+
+<div class="app">
+
+<h1>🏠 House Price Predictor</h1>
+<p class="subtitle">Enter housing features to estimate the price</p>
+
+<div class="grid">
+
+<input id="medinc" placeholder="Median Income">
+<input id="houseage" placeholder="House Age">
+
+<input id="rooms" placeholder="Average Rooms">
+<input id="bedrooms" placeholder="Average Bedrooms">
+
+<input id="population" placeholder="Population">
+<input id="occup" placeholder="Average Occupancy">
+
+<input id="lat" placeholder="Latitude">
+<input id="long" placeholder="Longitude">
+
+</div>
+
+<button onclick="predict()">Predict Price</button>
+
+<div class="loader" id="loader"></div>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
