@@ -30,6 +30,10 @@ Users can input housing features and receive a predicted house price.
 
 ---
 
+## Application Preview
+
+![House Price Predictor](assets/app.png)
+
 ## Project Architecture
 
 Frontend (HTML, CSS, JavaScript)
