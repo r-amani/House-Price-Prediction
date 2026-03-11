@@ -16,7 +16,7 @@ parseFloat(document.getElementById("long").value)
 
 ];
 
-let response=await fetch("http:house-price-prediction-8hdv.onrender.com/predict",{
+let response=await fetch("https:house-price-prediction-8hdv.onrender.com/predict",{
 
 method:"POST",
 
