@@ -16,7 +16,7 @@ parseFloat(document.getElementById("long").value)
 
 ];
 
-let response=await fetch("https:house-price-prediction-8hdv.onrender.com/predict",{
+let response=await fetch("https://house-price-prediction-8hdv.onrender.com/predict",{
 
 method:"POST",
 
@@ -33,6 +33,6 @@ let data=await response.json();
 document.getElementById("loader").style.display="none";
 
 document.getElementById("result").innerText=
-"Predicted Price: $" + Number(data.predicted_price).toFixed(2);
+"Predicted Price: $" + Number(data.Predicted_Price).toFixed(2);
 
 }
