@@ -3,6 +3,9 @@ async function predict(){
 document.getElementById("loader").style.display="block";
 document.getElementById("result").innerText="";
 
+let button=document.querySelector("button");
+button.disabled=true;
+
 let features=[
 
 parseFloat(document.getElementById("qual").value),
@@ -18,10 +21,10 @@ parseFloat(document.getElementById("lotshape").value)
 
 ];
 
-// check for empty inputs
 if(features.some(v => isNaN(v))){
 document.getElementById("loader").style.display="none";
 document.getElementById("result").innerText="Please fill all fields correctly.";
+button.disabled=false;
 return;
 }
 
@@ -59,5 +62,7 @@ document.getElementById("loader").style.display="none";
 document.getElementById("result").innerText="Server error.";
 
 }
+
+button.disabled=false;
 
 }
