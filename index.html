@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
 <title>House Price Predictor</title>
-<link href="style.css" rel = "stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -15,17 +16,26 @@
 
 <div class="grid">
 
-<input id="medinc" placeholder="Median Income">
-<input id="houseage" placeholder="House Age">
+<input id="qual" placeholder="Overall Quality (1-10)">
+<input id="area" placeholder="Living Area (sq ft)">
 
-<input id="rooms" placeholder="Average Rooms">
-<input id="bedrooms" placeholder="Average Bedrooms">
+<input id="garagecars" placeholder="Garage Capacity">
+<input id="garagearea" placeholder="Garage Area (sq ft)">
 
-<input id="population" placeholder="Population">
-<input id="occup" placeholder="Average Occupancy">
+<input id="bsmt" placeholder="Total Basement Area (sq ft)">
+<input id="firstflr" placeholder="1st Floor Area (sq ft)">
 
-<input id="lat" placeholder="Latitude">
-<input id="long" placeholder="Longitude">
+<input id="bath" placeholder="Full Bathrooms">
+<input id="rooms" placeholder="Total Rooms Above Ground">
+
+<input id="year" placeholder="Year Built">
+
+<select id="lotshape">
+<option value="0">Regular</option>
+<option value="1">Slightly Irregular</option>
+<option value="2">Moderately Irregular</option>
+<option value="3">Irregular</option>
+</select>
 
 </div>
 
@@ -40,4 +50,5 @@
 <script src="script.js"></script>
 
 </body>
+
 </html>

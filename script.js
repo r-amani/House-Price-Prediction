@@ -5,21 +5,31 @@ document.getElementById("result").innerText="";
 
 let features=[
 
-parseFloat(document.getElementById("medinc").value),
-parseFloat(document.getElementById("houseage").value),
+parseFloat(document.getElementById("qual").value),
+parseFloat(document.getElementById("area").value),
+parseFloat(document.getElementById("garagecars").value),
+parseFloat(document.getElementById("garagearea").value),
+parseFloat(document.getElementById("bsmt").value),
+parseFloat(document.getElementById("firstflr").value),
+parseFloat(document.getElementById("bath").value),
 parseFloat(document.getElementById("rooms").value),
-parseFloat(document.getElementById("bedrooms").value),
-parseFloat(document.getElementById("population").value),
-parseFloat(document.getElementById("occup").value),
-parseFloat(document.getElementById("lat").value),
-parseFloat(document.getElementById("long").value)
+parseFloat(document.getElementById("year").value),
+parseFloat(document.getElementById("lotshape").value)
 
 ];
 
-let response=await fetch("https:house-price-prediction-8hdv.onrender.com/predict",{
+// check for empty inputs
+if(features.some(v => isNaN(v))){
+document.getElementById("loader").style.display="none";
+document.getElementById("result").innerText="Please fill all fields correctly.";
+return;
+}
+
+try{
+
+let response=await fetch("https://house-price-prediction-8hdv.onrender.com/predict",{
 
 method:"POST",
-
 headers:{
 "Content-Type":"application/json"
 },
@@ -32,7 +42,22 @@ let data=await response.json();
 
 document.getElementById("loader").style.display="none";
 
-document.getElementById("result").innerText=
-"Predicted Price: $" + Number(data.predicted_price).toFixed(2);
+if(data.Predicted_Price){
+
+document.getElementById("result").innerText =
+"Estimated Price: $" + Math.round(data.Predicted_Price).toLocaleString();
+
+}else{
+
+document.getElementById("result").innerText = "Prediction failed.";
+
+}
+
+}catch(error){
+
+document.getElementById("loader").style.display="none";
+document.getElementById("result").innerText="Server error.";
+
+}
 
 }
