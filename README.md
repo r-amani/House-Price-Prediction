@@ -32,7 +32,7 @@ Users can input housing features and receive a predicted house price.
 
 ## Application Preview
 
-![House Price Predictor](assets/UI.png)
+![House Price Predictor](assets/UI(2).png)
 
 ## Project Architecture
 
